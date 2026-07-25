@@ -47,9 +47,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
 <style>
-/* ============================================================
-   TOKENS
-   ============================================================ */
 :root{
   --primary:#2563EB;
   --primary-light:#5B8DEF;
@@ -141,7 +138,6 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;color:var(--text);}
 
 section{padding:7rem 0;position:relative;}
 
-/* Buttons */
 .btn{
   display:inline-flex;align-items:center;gap:0.6rem;
   font-family:var(--font-body);font-weight:600;font-size:0.86rem;
@@ -156,9 +152,6 @@ section{padding:7rem 0;position:relative;}
 .btn svg{width:15px;height:15px;transition:transform 0.3s var(--ease);}
 .btn:hover svg{transform:translate(2px,-2px);}
 
-/* ============================================================
-   CURSOR GLOW (desktop only, decorative)
-   ============================================================ */
 .cursor-glow{
   position:fixed;width:420px;height:420px;border-radius:50%;
   background:radial-gradient(circle, rgba(37,99,235,0.16), rgba(56,189,248,0.06) 45%, transparent 70%);
@@ -168,18 +161,12 @@ section{padding:7rem 0;position:relative;}
 }
 @media (max-width:900px){ .cursor-glow{display:none;} }
 
-/* ============================================================
-   SCROLL PROGRESS
-   ============================================================ */
 .scroll-progress{
   position:fixed;top:0;left:0;height:3px;
   background:linear-gradient(90deg,var(--primary),var(--accent));
   width:0%;z-index:1100;transition:width 0.1s linear;
 }
 
-/* ============================================================
-   NAV
-   ============================================================ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
   display:flex;justify-content:space-between;align-items:center;
@@ -233,9 +220,6 @@ nav{
 .mobile-menu.open{display:flex;}
 .mobile-menu a{font-family:var(--font-display);font-size:1.8rem;color:var(--text);text-decoration:none;}
 
-/* ============================================================
-   HERO
-   ============================================================ */
 #hero{
   min-height:100vh;display:flex;flex-direction:column;justify-content:center;
   padding-top:6rem;position:relative;overflow:hidden;
@@ -263,6 +247,11 @@ h1.hero-name{
   .hero-actions .btn{flex:1 1 240px;justify-content:center;padding:1.05rem 2rem;font-size:0.92rem;}
 }
 
+/* Desktop/laptop: constrain the hero heading + description + buttons block to 80% width */
+@media (min-width:1024px){
+  .hero-inner{width:80%;max-width:80%;}
+}
+
 .hero-stats{
   display:grid;grid-template-columns:repeat(4,auto);gap:3rem;
   padding-top:2.2rem;border-top:1px solid var(--border);max-width:720px;
@@ -271,7 +260,6 @@ h1.hero-name{
 .stat-num span{color:var(--accent);}
 .stat-label{font-size:0.72rem;color:var(--text-faint);letter-spacing:0.04em;margin-top:0.3rem;display:block;}
 
-/* Marquee */
 .marquee-wrap{
   border-top:1px solid var(--border);border-bottom:1px solid var(--border);
   padding:1.3rem 0;overflow:hidden;background:var(--bg-alt);
@@ -284,9 +272,6 @@ h1.hero-name{
 .marquee-item::after{content:'/';color:var(--accent);}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* ============================================================
-   ABOUT
-   ============================================================ */
 #about{background:var(--bg-alt);}
 .about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:5rem;align-items:center;}
 .about-photo-wrap{position:relative;}
@@ -311,9 +296,6 @@ h1.hero-name{
 .about-fact .label{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-family:var(--font-mono);}
 .about-fact .value{font-size:0.92rem;color:var(--text);margin-top:0.3rem;}
 
-/* ============================================================
-   SERVICES
-   ============================================================ */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
 .service-card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
@@ -328,9 +310,6 @@ h1.hero-name{
 .service-card h3{font-size:1.08rem;margin-bottom:0.6rem;}
 .service-card p{font-size:0.87rem;color:var(--text-dim);}
 
-/* ============================================================
-   SKILLS + SOFTWARE
-   ============================================================ */
 #skills{background:var(--bg-alt);}
 .skills-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;}
 .skill-cat{margin-bottom:2.2rem;}
@@ -349,9 +328,6 @@ h1.hero-name{
 }
 .software-chip:hover{border-color:var(--accent);color:var(--text);transform:translateY(-3px);}
 
-/* ============================================================
-   PORTFOLIO
-   ============================================================ */
 .filter-bar{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2.8rem;}
 .filter-btn{
   font-size:0.78rem;font-weight:500;padding:0.55rem 1.15rem;border-radius:999px;
@@ -371,10 +347,10 @@ h1.hero-name{
   aspect-ratio:4/3;position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
 }
-.project-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s var(--ease);z-index:1;}
+.project-thumb img,.project-thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s var(--ease);z-index:1;}
 .project-thumb .thumb-label{position:relative;z-index:0;}
 .project-thumb:not(.placeholder) .thumb-label{display:none;}
-.project-card:hover .project-thumb img{transform:scale(1.06);}
+.project-card:hover .project-thumb img,.project-card:hover .project-thumb video{transform:scale(1.06);}
 .project-thumb.placeholder{background:linear-gradient(135deg,var(--surface-2),var(--surface));}
 .project-thumb.placeholder span{font-family:var(--font-display);color:var(--text-faint);font-size:0.85rem;letter-spacing:0.06em;}
 .project-cat-tag{
@@ -386,7 +362,6 @@ h1.hero-name{
 .project-info h3{font-size:1rem;margin-bottom:0.3rem;}
 .project-info p{font-size:0.8rem;color:var(--text-faint);}
 
-/* Lightbox */
 .lightbox{
   position:fixed;inset:0;background:rgba(6,9,18,0.92);backdrop-filter:blur(6px);
   z-index:1300;display:none;align-items:center;justify-content:center;padding:2rem;
@@ -401,9 +376,6 @@ h1.hero-name{
   display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.2rem;
 }
 
-/* ============================================================
-   EXPERIENCE / CLIENTS
-   ============================================================ */
 #experience{background:var(--bg-alt);}
 .timeline{position:relative;padding-left:2.4rem;border-left:1px solid var(--border);}
 .timeline-item{position:relative;padding-bottom:2.6rem;}
@@ -422,25 +394,18 @@ h1.hero-name{
   border-radius:999px;font-family:var(--font-mono);
 }
 
-/* Education row */
 .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;}
 .edu-card{border:1px solid var(--border);border-radius:var(--radius-md);padding:1.6rem;background:var(--surface);}
 .edu-card .tag{font-family:var(--font-mono);font-size:0.66rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.07em;}
 .edu-card h4{font-size:0.98rem;margin:0.6rem 0 0.3rem;font-family:var(--font-display);font-weight:600;}
 .edu-card p{font-size:0.8rem;color:var(--text-faint);}
 
-/* ============================================================
-   PROCESS
-   ============================================================ */
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
 .process-card{padding:2rem 1.6rem;border-top:2px solid var(--border);position:relative;}
 .process-num{font-family:var(--font-display);font-size:2.6rem;color:var(--surface-2);line-height:1;margin-bottom:1rem;}
 .process-card h3{font-size:1.02rem;margin-bottom:0.6rem;}
 .process-card p{font-size:0.85rem;color:var(--text-dim);}
 
-/* ============================================================
-   TESTIMONIALS
-   ============================================================ */
 #testimonials{background:var(--bg-alt);}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
 .testi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.8rem;}
@@ -450,9 +415,6 @@ h1.hero-name{
 .testi-name{font-size:0.85rem;color:var(--text);font-weight:600;}
 .testi-role{font-size:0.74rem;color:var(--text-faint);}
 
-/* ============================================================
-   FAQ
-   ============================================================ */
 .faq-list{max-width:780px;}
 .faq-item{border-bottom:1px solid var(--border);}
 .faq-q{
@@ -465,9 +427,6 @@ h1.hero-name{
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease);}
 .faq-a p{padding-bottom:1.5rem;color:var(--text-dim);font-size:0.9rem;max-width:640px;}
 
-/* ============================================================
-   CONTACT
-   ============================================================ */
 #contact{background:var(--bg-alt);}
 .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:5rem;}
 .contact-links{display:flex;flex-direction:column;gap:0;margin-top:2rem;}
@@ -508,9 +467,6 @@ h1.hero-name{
   .success-check-path{animation:none;stroke-dashoffset:0;}
 }
 
-/* ============================================================
-   PREVIEW MODAL
-   ============================================================ */
 .preview-overlay{
   position:fixed;inset:0;background:rgba(6,9,18,0.85);backdrop-filter:blur(6px);
   z-index:1400;display:none;align-items:center;justify-content:center;padding:1.5rem;
@@ -533,9 +489,6 @@ h1.hero-name{
 .spinner{width:14px;height:14px;border-radius:50%;border:2px solid var(--border-strong);border-top-color:var(--accent);animation:spin 0.7s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 footer{padding:3rem 0;border-top:1px solid var(--border);}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 .footer-copy{font-size:0.78rem;color:var(--text-faint);}
@@ -543,7 +496,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
 .footer-links a{font-size:0.78rem;color:var(--text-faint);text-decoration:none;transition:color 0.3s;}
 .footer-links a:hover{color:var(--accent);}
 
-/* Back to top */
 .back-top{
   position:fixed;bottom:1.8rem;right:1.8rem;width:46px;height:46px;border-radius:50%;
   background:var(--surface);border:1px solid var(--border-strong);color:var(--accent);
@@ -553,9 +505,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
 .back-top.visible{opacity:1;transform:translateY(0);pointer-events:all;}
 .back-top:hover{border-color:var(--accent);}
 
-/* ============================================================
-   REVEAL ANIMATION
-   ============================================================ */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-d1{transition-delay:0.08s;}
@@ -568,9 +517,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   .reveal{opacity:1;transform:none;}
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 @media (max-width:1080px){
   .about-grid,.skills-grid,.contact-grid{grid-template-columns:1fr;gap:3rem;}
   .services-grid,.software-grid,.project-grid,.process-grid,.testi-grid,.edu-grid{grid-template-columns:repeat(2,1fr);}
@@ -597,7 +543,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">Akintoye<span>.</span>Samuel</a>
   <ul class="nav-links" id="navLinks">
@@ -632,7 +577,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
 
 <main id="main">
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-grid-bg" aria-hidden="true"></div>
   <div class="container hero-inner">
@@ -659,7 +603,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container about-grid">
     <div class="about-photo-wrap reveal">
@@ -686,7 +629,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="container">
     <div class="section-head reveal">
@@ -729,7 +671,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container skills-grid">
     <div class="reveal">
@@ -775,7 +716,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section id="work">
   <div class="container">
     <div class="section-head reveal">
@@ -867,43 +807,43 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Motion Graphics Projects" data-desc="Reel of animated brand and social content.">
-        <div class="project-thumb placeholder"><img src="assets/images/SmartTeller Documentation Intro.mp4" alt="Motion graphics reel still" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
+        <div class="project-thumb placeholder"><video src="assets/images/SmartTeller Documentation Intro.mp4" autoplay muted loop playsinline onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
         <div class="project-info"><h3>Motion Graphics Projects</h3><p>Animated brand &amp; social content</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Motion Graphics Projects" data-desc="Reel of animated brand and social content.">
-        <div class="project-thumb placeholder"><img src="assets/images/SmartTeller Documentation Outro.mp4" alt="Motion graphics reel still" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
+        <div class="project-thumb placeholder"><video src="assets/images/SmartTeller Documentation Outro.mp4" autoplay muted loop playsinline onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
         <div class="project-info"><h3>Motion Graphics Projects</h3><p>Animated brand &amp; social content</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Motion Graphics Projects" data-desc="Reel of animated brand and social content.">
-        <div class="project-thumb placeholder"><img src="assets/images/SmartTeller Academy Outro.mp4" alt="Motion graphics reel still" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
+        <div class="project-thumb placeholder"><video src="assets/images/SmartTeller Academy Outro.mp4" autoplay muted loop playsinline onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
         <div class="project-info"><h3>Motion Graphics Projects</h3><p>Animated brand &amp; social content</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Wessy Social Media Flyer" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>Social Media Campaigns</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="Wessy Social Media Flyer" data-desc="Personal brand social media flyer design.">
+        <div class="project-thumb placeholder"><img src="assets/images/social-media.png" alt="Wessy social media flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Wessy Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>Wessy Social Media Flyer</h3><p>Personal brand · Social media flyer</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Emirate Club Flyer" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media0.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>Social Media Campaigns</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="Emirate Club Flyer" data-desc="Nightlife event flyer design.">
+        <div class="project-thumb placeholder"><img src="assets/images/social-media0.png" alt="Emirate Club event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Emirate Club Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>Emirate Club Flyer</h3><p>Nightlife · Event flyer design</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Emirate Club Flyer" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media1.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>Social Media Campaigns</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="Emirate Club Flyer" data-desc="Nightlife event flyer design.">
+        <div class="project-thumb placeholder"><img src="assets/images/social-media1.png" alt="Emirate Club event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Emirate Club Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>Emirate Club Flyer</h3><p>Nightlife · Event flyer design</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Social Media Campaigns" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media2.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>POP Design</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="POP Design" data-desc="Retail point-of-purchase display design.">
+        <div class="project-thumb placeholder"><img src="assets/images/social-media2.png" alt="POP retail display design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">POP Design</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>POP Design</h3><p>Retail · Point-of-purchase display</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Social Media Campaigns" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media3.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>New Month Flyer</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="New Month Flyer" data-desc="Monthly greeting social media flyer design.">
+        <div class="project-thumb placeholder"><img src="assets/images/social-media3.png" alt="New Month greeting flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">New Month Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>New Month Flyer</h3><p>Monthly greeting · Social media flyer</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Social Media Campaigns" data-desc="Multi-platform campaign design.">
@@ -911,31 +851,30 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
         <div class="project-info"><h3>Social Media Campaigns</h3><p>Multi-platform campaign design</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Birthday Flyer" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media5.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>Birthday Flyer</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="Birthday Flyer" data-desc="Celebration social media flyer design.">
+        <div class="project-thumb placeholder"><img src="assets/images/social-media5.png" alt="Birthday celebration flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Birthday Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>Birthday Flyer</h3><p>Celebration · Social media flyer</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Social Media Campaigns" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media6.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>Ladies Night Club Flyer</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="Ladies Night Club Flyer" data-desc="Nightlife event flyer design.">
+        <div class="project-thumb placeholder"><img src="assets/images/social-media6.png" alt="Ladies Night Club event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Ladies Night Club Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>Ladies Night Club Flyer</h3><p>Nightlife · Event flyer design</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Social Media Campaigns" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/church-flyer.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>Church Flyer</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="Church Flyer" data-desc="Faith-based event flyer design.">
+        <div class="project-thumb placeholder"><img src="assets/images/church-flyer.png" alt="Church event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Church Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>Church Flyer</h3><p>Faith-based event · Flyer design</p></div>
       </div>
 
-      <div class="project-card reveal" data-cat="motion" data-title="Social Media Campaigns" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media8.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
-        <div class="project-info"><h3>Club Flyer</h3><p>Multi-platform campaign design</p></div>
+      <div class="project-card reveal" data-cat="motion" data-title="Club Flyer" data-desc="Nightlife event flyer design.">
+        <div class="project-thumb placeholder"><img src="assets/images/social-media8.png" alt="Club event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Club Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-info"><h3>Club Flyer</h3><p>Nightlife · Event flyer design</p></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
     <div class="section-head reveal">
@@ -978,7 +917,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </section>
 
-<!-- PROCESS -->
 <section id="process">
   <div class="container">
     <div class="section-head reveal">
@@ -994,7 +932,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="container">
     <div class="section-head reveal">
@@ -1019,7 +956,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="container">
     <div class="section-head reveal">
@@ -1051,7 +987,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container contact-grid">
     <div class="reveal">
@@ -1117,7 +1052,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
   <div class="lightbox-inner">
@@ -1126,7 +1060,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   </div>
 </div>
 
-<!-- MESSAGE PREVIEW MODAL -->
 <div class="preview-overlay" id="previewOverlay">
   <div class="preview-card">
     <h3>Review your message</h3>
@@ -1147,10 +1080,8 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   "use strict";
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Footer year */
   document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-  /* Theme toggle with persistence */
   const themeToggle = document.getElementById('themeToggle');
   const body = document.body;
   const savedTheme = localStorage.getItem('theme');
@@ -1161,7 +1092,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     localStorage.setItem('theme', next);
   });
 
-  /* Mobile menu */
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', function(){
@@ -1177,7 +1107,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     document.body.style.overflow = '';
   }));
 
-  /* Cursor glow (desktop only) */
   const glow = document.getElementById('cursorGlow');
   if (!reduceMotion && window.matchMedia('(min-width:901px)').matches) {
     let gx = window.innerWidth/2, gy = window.innerHeight/3, tx = gx, ty = gy;
@@ -1189,7 +1118,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     })();
   } else if (glow) { glow.style.display = 'none'; }
 
-  /* Scroll progress + back to top + active nav (single throttled scroll handler) */
   const progress = document.getElementById('scrollProgress');
   const backTop = document.getElementById('backTop');
   const navLinks = document.querySelectorAll('.nav-links a');
@@ -1209,9 +1137,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   window.addEventListener('scroll', () => { if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, {passive:true});
   backTop.addEventListener('click', () => window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'}));
 
-  /* Typewriter hero role — always runs so the rotating roles are visible
-     even for visitors whose OS/browser has "reduce motion" turned on,
-     since this text is core content, not decorative motion. */
   const roles = ["Senior Graphic Designer","UI/UX Designer","Motion Graphics Designer","Video Editor"];
   const roleEl = document.getElementById('heroRole');
   {
@@ -1230,7 +1155,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     type();
   }
 
-  /* Animated counters */
   function countUp(el){
     const target = parseInt(el.dataset.count, 10);
     if (isNaN(target)) return;
@@ -1248,7 +1172,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     requestAnimationFrame(step);
   }
 
-  /* Reveal on scroll + trigger counters/skill bars */
   const revealObs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -1259,10 +1182,8 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     });
   }, {threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-  /* Hero stats count immediately (not in a .reveal wrapper) */
   setTimeout(() => document.querySelectorAll('.hero-stats [data-count]').forEach(countUp), 1200);
 
-  /* Portfolio filter */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card');
   filterBtns.forEach(btn => btn.addEventListener('click', () => {
@@ -1275,22 +1196,23 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     });
   }));
 
-  /* Lightbox */
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
-  cards.forEach(card => card.addEventListener('click', () => {
-    const img = card.querySelector('img');
-    lightboxImg.src = img ? img.src : '';
-    lightboxImg.alt = card.dataset.title || '';
-    lightboxCaption.textContent = (card.dataset.title||'') + (card.dataset.desc ? ' — ' + card.dataset.desc : '');
-    lightbox.classList.add('open');
-  }));
+  cards.forEach(card => {
+    if (card.querySelector('video')) return;
+    card.addEventListener('click', () => {
+      const img = card.querySelector('img');
+      lightboxImg.src = img ? img.src : '';
+      lightboxImg.alt = card.dataset.title || '';
+      lightboxCaption.textContent = (card.dataset.title||'') + (card.dataset.desc ? ' — ' + card.dataset.desc : '');
+      lightbox.classList.add('open');
+    });
+  });
   document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
   lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
 
-  /* FAQ accordion */
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');
     const a = item.querySelector('.faq-a');
@@ -1307,18 +1229,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     });
   });
 
-  /* ============================================================
-     CONTACT FORM — preview then direct send via Web3Forms
-     ============================================================
-     The visitor's browser posts the form data straight to Web3Forms
-     over HTTPS, along with your access key. Web3Forms then forwards
-     it to whatever email address you registered with — no mail app
-     opens for the visitor, and no server of your own is needed.
-
-     Your access key from web3forms.com is filled in below. The only
-     other setup step is: check your inbox for a one-time confirmation
-     email from Web3Forms and click the link in it to activate delivery.
-  */
   const WEB3FORMS_ACCESS_KEY = '2fb58f83-dff5-4dd8-9731-c84c941090c8';
 
   const fName = document.getElementById('fName');
@@ -1344,7 +1254,7 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
 
   function showMsg(el, restoreText){
     el.classList.remove('success','error');
-    void el.offsetWidth; /* restart CSS animation each time it's shown */
+    void el.offsetWidth;
     el.classList.add(restoreText ? 'error' : 'success');
   }
   function hideMsgs(){
@@ -1364,7 +1274,6 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
 
     if(!valid){ showMsg(error, true); return; }
 
-    /* Show the preview modal instead of sending right away */
     previewName.textContent = fName.value.trim();
     previewEmail.textContent = fEmail.value.trim();
     previewMsg.textContent = fMsg.value.trim();
