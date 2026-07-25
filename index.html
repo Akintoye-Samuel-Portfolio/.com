@@ -23,7 +23,9 @@
 <meta name="twitter:description" content="7+ years crafting brand identities, product interfaces and motion design for clients worldwide."/>
 <meta name="twitter:image" content="https://akintoye-samuel-portfolio.github.io/.com/assets/images/myprofile.jpg"/>
 
+<link rel="preload" as="image" href="assets/images/myprofile.webp" type="image/webp" fetchpriority="high"/>
 <link rel="icon" type="image/jpeg" href="assets/images/myprofile.jpg"/>
+<link rel="apple-touch-icon" href="assets/images/myprofile.jpg"/>
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -44,7 +46,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"/></noscript>
 
 <style>
 :root{
@@ -241,7 +244,7 @@ h1.hero-name{
   font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:1.02;letter-spacing:-0.02em;margin-bottom:1.6rem;
 }
 .hero-desc{font-size:1.08rem;color:var(--text-dim);max-width:640px;margin-bottom:2.4rem;}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:4rem;}
 @media (min-width:861px){
   .hero-actions{max-width:640px;}
   .hero-actions .btn{flex:1 1 240px;justify-content:center;padding:1.05rem 2rem;font-size:0.92rem;}
@@ -585,7 +588,10 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     <p class="hero-desc">7+ years building brand identities, product interfaces and motion work for companies across the US, UK, Canada, Nigeria and Ghana — available worldwide, remote or on-site.</p>
     <div class="hero-actions">
       <a href="#work" class="btn btn-primary">View Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-      <a href="assets/Samuel-Akintoye-Resume.pdf" class="btn btn-ghost" download>Download Resume <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg></a>
+      <a href="assets/Samuel-Akintoye-Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">View Resume <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg></a>
+      <a href="assets/Samuel-Akintoye-Resume.pdf" download="Akintoye-Samuel-Resume.pdf" class="theme-toggle" aria-label="Download Resume PDF" title="Download Resume PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>
+      </a>
     </div>
     <div class="hero-stats">
       <div><span class="stat-num" data-count="7" data-suffix="+"><span>0</span></span><span class="stat-label">Years Experience</span></div>
@@ -607,7 +613,7 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   <div class="container about-grid">
     <div class="about-photo-wrap reveal">
       <div class="about-photo">
-        <img src="assets/images/myprofile.jpg" alt="Portrait of Akintoye Samuel" loading="lazy"/>
+        <picture><source srcset="assets/images/myprofile.webp" type="image/webp"><img src="assets/images/myprofile.jpg" alt="Portrait of Akintoye Samuel" loading="eager" fetchpriority="high" decoding="async" width="640" height="800"/></picture>
       </div>
       <div class="about-photo-badge">
         <span class="badge-dot"></span>
@@ -732,142 +738,152 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     <div class="project-grid" id="projectGrid">
 
       <div class="project-card reveal" data-cat="uiux" data-title="Property Question Nigeria" data-desc="Real-estate Mock Up design.">
-        <div class="project-thumb placeholder"><img src="assets/images/property-question-ng.png" alt="Property Question Nigeria interface" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Property Question NG</span><span class="project-cat-tag">UI/UX</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/property-question-ng.webp" type="image/webp"><img src="assets/images/property-question-ng.png" alt="Property Question Nigeria interface" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Property Question NG</span><span class="project-cat-tag">UI/UX</span></div>
         <div class="project-info"><h3>Property Question Nigeria Mock Up</h3><p>Real-estate platform · Mock Up</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="uiux" data-title="Party Planning App UI/UX" data-desc="Software · UI/UX design.">
-        <div class="project-thumb placeholder"><img src="assets/images/UI-UX.png" alt="Property Question Nigeria interface" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Party Planning App UI/UX</span><span class="project-cat-tag">UI/UX</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/UI-UX.webp" type="image/webp"><img src="assets/images/UI-UX.png" alt="Property Question Nigeria interface" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Party Planning App UI/UX</span><span class="project-cat-tag">UI/UX</span></div>
         <div class="project-info"><h3>Party Planning App UI/UX</h3><p>Software · UI/UX design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="uiux" data-title="Apply Flow UI/UX" data-desc="Software UI/UX design.">
-        <div class="project-thumb placeholder"><img src="assets/images/UI-UX0.png" alt="Property Question Nigeria interface" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Apply Flow UI/UX</span><span class="project-cat-tag">UI/UX</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/UI-UX0.webp" type="image/webp"><img src="assets/images/UI-UX0.png" alt="Property Question Nigeria interface" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Apply Flow UI/UX</span><span class="project-cat-tag">UI/UX</span></div>
         <div class="project-info"><h3>Apply Flow UI/UX</h3><p>Software · UI/UX design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="uiux" data-title="Game Pot UI/UX" data-desc="Software UI/UX design.">
-        <div class="project-thumb placeholder"><img src="assets/images/UI-UX1.png" alt="Property Question Nigeria interface" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Game Pot UI/UX</span><span class="project-cat-tag">UI/UX</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/UI-UX1.webp" type="image/webp"><img src="assets/images/UI-UX1.png" alt="Property Question Nigeria interface" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Game Pot UI/UX</span><span class="project-cat-tag">UI/UX</span></div>
         <div class="project-info"><h3>Game Pot UI/UX</h3><p>Software · UI/UX design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="brand" data-title="Property Question Nigeria" data-desc="Real-estate platform UI/UX design.">
-        <div class="project-thumb placeholder"><img src="assets/images/property-question-ng0.png" alt="Property Question Nigeria interface" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Property Question NG</span><span class="project-cat-tag">UI/UX</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/property-question-ng0.webp" type="image/webp"><img src="assets/images/property-question-ng0.png" alt="Property Question Nigeria interface" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Property Question NG</span><span class="project-cat-tag">UI/UX</span></div>
         <div class="project-info"><h3>Property Question Nigeria</h3><p>Real-estate platform · brand identity</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="brand" data-title="SmartTeller" data-desc="Fintech brand identity and product design.">
-        <div class="project-thumb placeholder"><img src="assets/images/smartteller.png" alt="SmartTeller brand identity" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">SmartTeller</span><span class="project-cat-tag">Branding</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/smartteller.webp" type="image/webp"><img src="assets/images/smartteller.png" alt="SmartTeller brand identity" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">SmartTeller</span><span class="project-cat-tag">Branding</span></div>
         <div class="project-info"><h3>SmartTeller</h3><p>CEO Birthday Flyer</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="brand" data-title="SmartTeller" data-desc="Fintech brand identity and product design.">
-        <div class="project-thumb placeholder"><img src="assets/images/smartteller0.png" alt="SmartTeller brand identity" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">SmartTeller</span><span class="project-cat-tag">Branding</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/smartteller0.webp" type="image/webp"><img src="assets/images/smartteller0.png" alt="SmartTeller brand identity" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">SmartTeller</span><span class="project-cat-tag">Branding</span></div>
         <div class="project-info"><h3>SmartTeller</h3><p> Social Media Flyer</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="brand" data-title="SmartTeller" data-desc="Fintech brand identity and product design.">
-        <div class="project-thumb placeholder"><img src="assets/images/smartteller1.png" alt="SmartTeller brand identity" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">SmartTeller</span><span class="project-cat-tag">Branding</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/smartteller1.webp" type="image/webp"><img src="assets/images/smartteller1.png" alt="SmartTeller brand identity" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">SmartTeller</span><span class="project-cat-tag">Branding</span></div>
         <div class="project-info"><h3>SmartTeller</h3><p>Fintech · Brand identity &amp; UI</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="brand" data-title="SmartTeller Academy" data-desc="Education sub-brand identity.">
-        <div class="project-thumb placeholder"><img src="assets/images/smartteller-academy.png" alt="SmartTeller Academy brand identity" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">SmartTeller Academy</span><span class="project-cat-tag">Branding</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/smartteller-academy.webp" type="image/webp"><img src="assets/images/smartteller-academy.png" alt="SmartTeller Academy brand identity" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">SmartTeller Academy</span><span class="project-cat-tag">Branding</span></div>
         <div class="project-info"><h3>SmartTeller Academy</h3><p>EdTech · Brand identity</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="brand" data-title="SmartTeller Robotics" data-desc="Robotics sub-brand identity.">
-        <div class="project-thumb placeholder"><img src="assets/images/smartteller-robotics.jpg" alt="SmartTeller Robotics brand identity" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">SmartTeller Robotics</span><span class="project-cat-tag">Branding</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/smartteller-robotics.webp" type="image/webp"><img src="assets/images/smartteller-robotics.jpg" alt="SmartTeller Robotics brand identity" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">SmartTeller Robotics</span><span class="project-cat-tag">Branding</span></div>
         <div class="project-info"><h3>SmartTeller Robotics</h3><p>Robotics · Brand identity</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="brand" data-title="Royal Sign" data-desc="Full site and signage branding.">
-        <div class="project-thumb placeholder"><img src="assets/images/royal-sign.jpg" alt="Royal Sign brand identity" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Royal Sign</span><span class="project-cat-tag">Branding</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/royal-sign.webp" type="image/webp"><img src="assets/images/royal-sign.jpg" alt="Royal Sign brand identity" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Royal Sign</span><span class="project-cat-tag">Branding</span></div>
         <div class="project-info"><h3>Royal Sign</h3><p>Full site · Signage branding</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="uiux" data-title="Google Translator" data-desc="Translation platform product design.">
-        <div class="project-thumb placeholder"><img src="assets/images/google-translator.png" alt="Google Translator platform UI/UX design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Google Translator</span><span class="project-cat-tag">UI/UX</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/google-translator.webp" type="image/webp"><img src="assets/images/google-translator.png" alt="Google Translator platform UI/UX design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Google Translator</span><span class="project-cat-tag">UI/UX</span></div>
         <div class="project-info"><h3>Google Tranlator</h3><p>Translation platform · UI/UX design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="uiux" data-title="Zeva" data-desc="Mobile app UI/UX and mockups.">
-        <div class="project-thumb placeholder"><img src="assets/images/zeva.png" alt="Zeva mobile app UI/UX design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Zeva</span><span class="project-cat-tag">UI/UX</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/zeva.webp" type="image/webp"><img src="assets/images/zeva.png" alt="Zeva mobile app UI/UX design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Zeva</span><span class="project-cat-tag">UI/UX</span></div>
         <div class="project-info"><h3>Zeva</h3><p>Mobile app · UI/UX design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="uiux" data-title="Zeva" data-desc="Mobile app UI/UX and mockups.">
-        <div class="project-thumb placeholder"><img src="assets/images/zeva0.png" alt="Zeva mobile app UI/UX design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Zeva</span><span class="project-cat-tag">UI/UX</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/zeva0.webp" type="image/webp"><img src="assets/images/zeva0.png" alt="Zeva mobile app UI/UX design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Zeva</span><span class="project-cat-tag">UI/UX</span></div>
         <div class="project-info"><h3>Zeva</h3><p>Mobile app · UI/UX &amp; Mockup design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="brand" data-title="Petroleum Station Branding" data-desc="Full site and signage branding.">
-        <div class="project-thumb placeholder"><img src="assets/images/petroleum-station.jpg" alt="Petroleum station environmental branding" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Petroleum Station</span><span class="project-cat-tag">Branding</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/nipco-branding.webp" type="image/webp"><img src="assets/images/nipco-branding.png" alt="Petroleum station environmental branding" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Petroleum Station</span><span class="project-cat-tag">Branding</span></div>
+        <div class="project-info"><h3>Petroleum Station Branding</h3><p>Retail · Environmental branding</p></div>
+      </div>
+
+      <div class="project-card reveal" data-cat="brand" data-title="Petroleum Station Branding" data-desc="Full site and signage branding.">
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/nipco-branding0.webp" type="image/webp"><img src="assets/images/nipco-branding0.png" alt="Petroleum station environmental branding" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Petroleum Station</span><span class="project-cat-tag">Branding</span></div>
         <div class="project-info"><h3>Petroleum Station Branding</h3><p>Retail · Environmental branding</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Motion Graphics Projects" data-desc="Reel of animated brand and social content.">
-        <div class="project-thumb placeholder"><video src="assets/images/SmartTeller Documentation Intro.mp4" autoplay muted loop playsinline onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
+        <div class="project-thumb placeholder"><video data-src="assets/images/SmartTeller-Documentation-Intro.mp4" muted loop playsinline preload="none" onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
         <div class="project-info"><h3>Motion Graphics Projects</h3><p>Animated brand &amp; social content</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Motion Graphics Projects" data-desc="Reel of animated brand and social content.">
-        <div class="project-thumb placeholder"><video src="assets/images/SmartTeller Documentation Outro.mp4" autoplay muted loop playsinline onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
+        <div class="project-thumb placeholder"><video data-src="assets/images/SmartTeller-Documentation-Outro.mp4" muted loop playsinline preload="none" onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
         <div class="project-info"><h3>Motion Graphics Projects</h3><p>Animated brand &amp; social content</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Motion Graphics Projects" data-desc="Reel of animated brand and social content.">
-        <div class="project-thumb placeholder"><video src="assets/images/SmartTeller Academy Outro.mp4" autoplay muted loop playsinline onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
+        <div class="project-thumb placeholder"><video data-src="assets/images/SmartTeller-Academy-Outro.mp4" muted loop playsinline preload="none" onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
+        <div class="project-info"><h3>Motion Graphics Projects</h3><p>Animated brand &amp; social content</p></div>
+      </div>
+
+      <div class="project-card reveal" data-cat="motion" data-title="Motion Graphics Projects" data-desc="Reel of animated brand and social content.">
+        <div class="project-thumb placeholder"><video data-src="assets/images/Practice.mp4" muted loop playsinline preload="none" onloadeddata="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"></video><span class="thumb-label">Motion Reel</span><span class="project-cat-tag">Motion</span></div>
         <div class="project-info"><h3>Motion Graphics Projects</h3><p>Animated brand &amp; social content</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Wessy Social Media Flyer" data-desc="Personal brand social media flyer design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media.png" alt="Wessy social media flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Wessy Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media.webp" type="image/webp"><img src="assets/images/social-media.png" alt="Wessy social media flyer design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Wessy Flyer</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>Wessy Social Media Flyer</h3><p>Personal brand · Social media flyer</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Emirate Club Flyer" data-desc="Nightlife event flyer design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media0.png" alt="Emirate Club event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Emirate Club Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media0.webp" type="image/webp"><img src="assets/images/social-media0.png" alt="Emirate Club event flyer design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Emirate Club Flyer</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>Emirate Club Flyer</h3><p>Nightlife · Event flyer design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Emirate Club Flyer" data-desc="Nightlife event flyer design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media1.png" alt="Emirate Club event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Emirate Club Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media1.webp" type="image/webp"><img src="assets/images/social-media1.png" alt="Emirate Club event flyer design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Emirate Club Flyer</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>Emirate Club Flyer</h3><p>Nightlife · Event flyer design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="POP Design" data-desc="Retail point-of-purchase display design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media2.png" alt="POP retail display design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">POP Design</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media2.webp" type="image/webp"><img src="assets/images/social-media2.png" alt="POP retail display design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">POP Design</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>POP Design</h3><p>Retail · Point-of-purchase display</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="New Month Flyer" data-desc="Monthly greeting social media flyer design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media3.png" alt="New Month greeting flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">New Month Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media3.webp" type="image/webp"><img src="assets/images/social-media3.png" alt="New Month greeting flyer design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">New Month Flyer</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>New Month Flyer</h3><p>Monthly greeting · Social media flyer</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Social Media Campaigns" data-desc="Multi-platform campaign design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media4.png" alt="Social media campaign design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media4.webp" type="image/webp"><img src="assets/images/social-media4.png" alt="Social media campaign design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Social Campaigns</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>Social Media Campaigns</h3><p>Multi-platform campaign design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Birthday Flyer" data-desc="Celebration social media flyer design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media5.png" alt="Birthday celebration flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Birthday Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media5.webp" type="image/webp"><img src="assets/images/social-media5.png" alt="Birthday celebration flyer design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Birthday Flyer</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>Birthday Flyer</h3><p>Celebration · Social media flyer</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Ladies Night Club Flyer" data-desc="Nightlife event flyer design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media6.png" alt="Ladies Night Club event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Ladies Night Club Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media6.webp" type="image/webp"><img src="assets/images/social-media6.png" alt="Ladies Night Club event flyer design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Ladies Night Club Flyer</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>Ladies Night Club Flyer</h3><p>Nightlife · Event flyer design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Church Flyer" data-desc="Faith-based event flyer design.">
-        <div class="project-thumb placeholder"><img src="assets/images/church-flyer.png" alt="Church event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Church Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/church-flyer.webp" type="image/webp"><img src="assets/images/church-flyer.png" alt="Church event flyer design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Church Flyer</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>Church Flyer</h3><p>Faith-based event · Flyer design</p></div>
       </div>
 
       <div class="project-card reveal" data-cat="motion" data-title="Club Flyer" data-desc="Nightlife event flyer design.">
-        <div class="project-thumb placeholder"><img src="assets/images/social-media8.png" alt="Club event flyer design" loading="lazy" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/><span class="thumb-label">Club Flyer</span><span class="project-cat-tag">Social</span></div>
+        <div class="project-thumb placeholder"><picture><source srcset="assets/images/social-media8.webp" type="image/webp"><img src="assets/images/social-media8.png" alt="Club event flyer design" loading="lazy" decoding="async" onload="this.parentElement.classList.remove('placeholder')" onerror="this.remove()"/></picture><span class="thumb-label">Club Flyer</span><span class="project-cat-tag">Social</span></div>
         <div class="project-info"><h3>Club Flyer</h3><p>Nightlife · Event flyer design</p></div>
       </div>
 
@@ -1184,6 +1200,21 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   setTimeout(() => document.querySelectorAll('.hero-stats [data-count]').forEach(countUp), 1200);
 
+
+  // Lazy-start autoplaying video reels: only fetch + play once near viewport
+  const videoObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const v = entry.target;
+      if (entry.isIntersecting) {
+        if (v.dataset.src && !v.src) { v.src = v.dataset.src; }
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { rootMargin: '200px 0px', threshold: 0.15 });
+  document.querySelectorAll('.project-thumb video[data-src]').forEach(v => videoObs.observe(v));
+
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card');
   filterBtns.forEach(btn => btn.addEventListener('click', () => {
@@ -1293,6 +1324,7 @@ footer{padding:3rem 0;border-top:1px solid var(--border);}
     const email = document.getElementById('fEmail').value.trim();
     const message = document.getElementById('fMsg').value.trim();
 
+    
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
